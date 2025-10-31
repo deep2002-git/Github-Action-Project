@@ -1,5 +1,5 @@
 # .github/workflows/ci.yml
-name: Java CI with Maven + Postman
+name: Java CI with Maven + Postman api
 
 on:
   push:
