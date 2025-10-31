@@ -4,8 +4,7 @@ name: Java CI with Maven + Postman api
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
 
 jobs:
   test:
