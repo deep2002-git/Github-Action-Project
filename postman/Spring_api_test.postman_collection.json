@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "863b451e-0f37-496f-998f-a058406f6843",
+		"name": "Spring_api_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46530662",
+		"_collection_link": "https://deepak-9504480.postman.co/workspace/deepak's-Workspace~46200f77-db6a-48c0-8712-b9d669dd8bea/collection/46530662-863b451e-0f37-496f-998f-a058406f6843?action=share&source=collection_link&creator=46530662"
+	},
+	"item": [
+		{
+			"name": "department",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const requestBody = pm.request.body ? pm.request.body.raw : {};\r",
+							"const jsonBody = JSON.parse(requestBody);\r",
+							"\r",
+							"if (!jsonBody.hasOwnProperty(\"departmentId\")) {\r",
+							"    console.error(\"❌ departmentId is missing in the request body!\");\r",
+							"    throw new Error(\"departmentId is required in the request body.\");\r",
+							"} \r",
+							"pm.expect(jsonBody).to.have.property(\"departmentId\");\r",
+							"pm.expect(jsonBody).to.have.property(\"departmentName\");\r",
+							"pm.expect(jsonBody).to.have.property(\"departmentAddress\");\r",
+							"pm.expect(jsonBody).to.have.property(\"departmentCode\");\r",
+							"console.log(\"✅ departmentId is present in the request body\");\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 201\", function () {\r",
+							"\r",
+							"    pm.response.to.have.status(200 || 201);\r",
+							"})\r",
+							"pm.test(\"Response has departmentId\" , function(){\r",
+							"    pm.resp\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentId\": \"16\",\r\n  \"departmentName\": \"IT\",\r\n  \"departmentAddress\": \"Gurgaon\",\r\n  \"departmentCode\": \"D001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "departmentget",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let body \r",
+							"\r",
+							"try{\r",
+							"    body = JSON.parse(pm.request.body.raw);\r",
+							"} catch(e){\r",
+							"     throw new Error(\"Somthing Wrong with the request body\");\r",
+							"    \r",
+							"}\r",
+							"\r",
+							"if (!body.departmentName) throw new Error(\"invalide departmentName \") \r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentId\": \"16\",\r\n  \"departmentName\": \"IT\",\r\n  \"departmentAddress\": \"delhi\",\r\n  \"departmentCode\": \"D001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/departments/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "departmentGetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/departments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "departmentDeleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/departments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"departments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
