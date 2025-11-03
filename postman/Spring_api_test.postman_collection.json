@@ -96,7 +96,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/departments",
+					"raw": "http://localhost:8080/depa rtments",
 					"protocol": "http",
 					"host": [
 						"localhost"
