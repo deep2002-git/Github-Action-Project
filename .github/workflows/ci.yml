@@ -86,3 +86,6 @@ jobs:
         with:
           name: app-log
           path: app.log
+
+      - name: Clean build
+        run: mvn clean
