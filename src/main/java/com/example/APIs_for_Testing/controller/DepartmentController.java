@@ -28,7 +28,7 @@ public class DepartmentController {
         return departmentService.saveDepartment(department);
     }
 
-    @GetMapping("/departments")
+    @GetMapping("/department")
     public List<DepartmentManual> fetchDepartmentList(){
         return departmentService.fetchDepartmentList();
     }
