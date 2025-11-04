@@ -65,7 +65,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/de",
+					"raw": "http://localhost:8080/departments",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -96,7 +96,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/depa rtments",
+					"raw": "http://localhost:8080/departments",
 					"protocol": "http",
 					"host": [
 						"localhost"
