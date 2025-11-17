@@ -96,14 +96,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/department",
+					"raw": "http://localhost:8080/departments",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"department"
+						"departments"
 					]
 				}
 			},
